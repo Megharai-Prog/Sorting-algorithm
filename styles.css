@@ -1,0 +1,54 @@
+/* Use Inter for the entire document */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+/* Styling for main container */
+main {
+    width: 80%;
+    margin: 20px auto;
+    text-align: left;
+}
+
+/* Use Source Code Pro for code content */
+pre, code {
+    font-family: 'Source Code Pro', monospace;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    display: block;
+    text-align: left;
+    overflow-x: auto;
+}
+
+/* Style for sorting algorithm sections */
+.algorithm {
+    background-color: #ffffff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-left: 5px solid #582C83;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling */
+header {
+    background-color: #231161;
+    color: white;
+    padding: 20px 0;
+    font-size: 1.8em;
+}
+
+/* Footer styling */
+footer {
+    background-color: #582C83; /* SFSU Purple */
+    color: #C99700; /* SFSU Gold */
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    font-size: 1.1em;
+}
