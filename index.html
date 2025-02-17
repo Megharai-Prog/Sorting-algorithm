@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Four Sorting Algorithms</title>
+    
+    <!-- Google Fonts for Inter and Source Code Pro -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Sorting Algorithms</h1>
+    </header>
+
+    <main>
+        <!-- Insertion Sort Section -->
+        <div id="insertion-sort" class="algorithm">
+            <h2>Insertion Sort</h2>
+            <p>Insertion sort is a simple sorting algorithm that builds the sorted array one item at a time.</p>
+            <pre><code class="language-javascript">
+// Insertion Sort Implementation
+function insertionSort(arr) {
+    for (let i = 1; i < arr.length; i++) {
+        let key = arr[i];
+        let j = i - 1;
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;
+    }
+    return arr;
+}
+            </code></pre>
+        </div>
+
+        <!-- Bubble Sort Section -->
+        <div id="bubble-sort" class="algorithm">
+            <h2>Bubble Sort</h2>
+            <p>Bubble Sort repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order.</p>
+            <pre><code class="language-javascript">
+// Bubble Sort Implementation
+function bubbleSort(arr) {
+    let len = arr.length;
+    for (let i = 0; i < len - 1; i++) {
+        for (let j = 0; j < len - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+            }
+        }
+    }
+    return arr;
+}
+            </code></pre>
+        </div>
+
+        <!-- Selection Sort Section -->
+        <div id="selection-sort" class="algorithm">
+            <h2>Selection Sort</h2>
+            <p>Selection Sort repeatedly finds the smallest element and places it at the beginning.</p>
+            <pre><code class="language-javascript">
+// Selection Sort Implementation
+function selectionSort(arr) {
+    let len = arr.length;
+    for (let i = 0; i < len - 1; i++) {
+        let minIndex = i;
+        for (let j = i + 1; j < len; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
+    }
+    return arr;
+}
+            </code></pre>
+        </div>
+
+        <!-- Quick Sort Section -->
+        <div id="quick-sort" class="algorithm">
+            <h2>Quick Sort</h2>
+            <p>Quick Sort picks a pivot and partitions the array into two halves, recursively sorting them.</p>
+            <pre><code class="language-javascript">
+// Quick Sort Implementation
+function quickSort(arr) {
+    if (arr.length <= 1) return arr;
+    let pivot = arr[arr.length - 1];
+    let left = arr.filter((el, index) => el < pivot && index !== arr.length - 1);
+    let right = arr.filter(el => el >= pivot);
+    return [...quickSort(left), pivot, ...quickSort(right)];
+}
+            </code></pre>
+        </div>
+    </main>
+
+    <footer>
+        <p>Created for my GitHub Assignment</p>
+    </footer>
+</body>
+</html>
